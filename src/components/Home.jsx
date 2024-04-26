@@ -1,12 +1,16 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
+import VacaImage from '../assets/vaca.jpg'
 import './Home.css'
+
 
 function Home () {
     return (
         <>
-            <img className='logo' src="../assets/vaca.jpg" />
-            <h1>MOOOSIC</h1>
+            <div className='title'>
+                <img className='logo' src={VacaImage} />
+                <h1>MOOOSIC</h1>
+            </div>
         </>
     )
 }
