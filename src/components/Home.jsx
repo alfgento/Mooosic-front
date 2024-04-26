@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
-import VacaImage from '../assets/vaca.jpg'
+import VacaImage from '../assets/logo-cow.png'
 import './Home.css'
-
 
 function Home () {
     return (
