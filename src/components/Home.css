@@ -1,11 +1,25 @@
-.logo {
-    height: 100px;
-    width: 100px;
-}
- h1 {
-    color: black;
- }
+@import url('https://fonts.googleapis.com/css2?family=Jersey+20+Charted&family=Permanent+Marker&family=Poppins:wght@200&family=Sedgwick+Ave+Display&display=swap');
 
-.title {
+.title{
+    padding: 20px;
     display: flex;
+    flex-direction: row;
+}
+.dashboard {
+    display: flex;
+}
+.logo{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    padding-right: 20px;
+}
+h1{
+    font-family: "Permanent Marker";
+    padding: 10px 50px 10px 50px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
 }

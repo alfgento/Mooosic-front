@@ -1,6 +1,8 @@
+import './UserForm.css'
+
 function UserForm () {
     return(
-        <form action="submit" method="post">
+        <form action="submit" method="post" className="sign-in-form">
             <h2>Sign In</h2>
             <label for="username">User name</label>
             <input type="text" id="username"/>
@@ -12,7 +14,7 @@ function UserForm () {
             <input type="text" id="age"/>
             <label for="email">Email</label>
             <input type="text" id="email"/>
-            <button type="submit">Publicar</button>
+            <button type="submit" onSubmit="" method="POST">Create user</button>
         </form>
     )
 }
