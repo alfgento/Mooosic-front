@@ -1,6 +1,22 @@
 import moment from 'moment'
+
 function PostCard  ({postData, isLoading}) {
     let date = []
+
+    const deleting = (id) => {
+        fetch(`http://localhost:3000/id/${id}`, { method: 'DELETE' })
+            .then(response => {
+                if (response.ok) {
+                    // Recargar la página después de eliminar la publicación con éxito
+                    window.location.reload();
+                } else {
+                    console.error('Error al eliminar la publicación');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    };
     postData.forEach(post => {
          const dateFormated = moment.utc(post.createdAt).format('DD-MM-YYYY HH:mm');
         date.push(dateFormated)
@@ -21,6 +37,7 @@ function PostCard  ({postData, isLoading}) {
                         <div className='bot-post'>
                             <p>{date[index]}</p>
                             <button>Like</button>
+                            <button onClick={()=>{deleting(post._id)}}>Delete</button>
                         </div>
                     </div>
                 ))}
