@@ -12,10 +12,10 @@ function LogIn() {
   const logIn = async () => {
     try {
       const loginInput = await signInWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
+      
       navigate('/')
       
-      alert(` Welcome ${user.name}!`);
+      alert(` Welcome!`);
     } catch (error) {
       console.log(error);
     }
