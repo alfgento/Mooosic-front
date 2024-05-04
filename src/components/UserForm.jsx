@@ -12,20 +12,19 @@ function SignIn() {
   const [age, setAge] = useState('');
   const [surname, setSurname] = useState('');
   const navigate = useNavigate()
-  
+
   const signIn = async () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       
       navigate('/')
-      // Perform additional actions to set the user's username, age, and surname
-      // For example, you could use the Firebase Realtime Database or Firestore to store this information
-      alert(`Account created succesfully. Welcome ${name}!}`);
-      // Redirect the user to the home page or perform other actions
+      
+      alert(`Account created succesfully. Welcome ${name}!`);
+      
     } catch (error) {
       console.log(error);
-      // Show an error message to the user
+     
     }
   };
 
@@ -92,23 +91,3 @@ function SignIn() {
 }
 
 export default SignIn;
-
-// function UserForm () {
-//     return(
-//         <form action="http://localhost:3000/user/createUser" method="POST" enctype="application/json" className="sign-in-form">
-//             <h2>Sign In</h2>
-//             <label htmlFor="username">User name</label>
-//             <input type="text" id="username" name="username"/>
-//             <label htmlFor="name">Name</label>
-//             <input type="text" id="name" name='name'/>
-//             <label htmlFor="surname">Surname</label>
-//             <input type="text" id="surname" name='surname'/>
-//             <label htmlFor="age">Age</label>
-//             <input type="text" id="age" name='age'/>
-//             <label htmlFor="email">Email</label>
-//             <input type="text" id="email" name='email'/>
-//             <button type="submit" >Create user</button>
-//         </form>
-//     )
-// }
- 

@@ -6,9 +6,6 @@ import Posts from './Posts'
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-
-
-
 function Home ({postData, isLoding}) {
     return (
         <>
@@ -16,8 +13,8 @@ function Home ({postData, isLoding}) {
                 <img className='logo' src={VacaImage} />
                 <h1>MOOOSIC</h1>
                 <div className='login'>
-                    <Link to=''>Login</Link>
-                    <Link to='sign-in'>Sign In</Link>
+                    <Link to='log-in'>Login</Link>
+                    <Link to='sign-in'>Sign Up</Link>
                 </div>
             </div>
             <div className='dashboard'> 
