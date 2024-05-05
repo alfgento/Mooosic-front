@@ -4,8 +4,8 @@ import Home from './Home';
 import UserForm from './components/UserForm';
 import PostForm from './components/PostForm';
 import LogIn from './components/LogIn'
-import './App.css'
 import LandingPage from './LandingPage';
+import './App.css'
 
 function App() {
 
