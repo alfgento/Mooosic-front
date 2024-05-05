@@ -1,0 +1,9 @@
+
+button{
+    border-radius: 5px;
+    background-color: rgb(86, 59, 244);
+    color: black;
+}
+.names{
+    font-weight: bold;
+}

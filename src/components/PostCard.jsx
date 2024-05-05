@@ -1,50 +1,51 @@
-import moment from 'moment'
+import React, { useState } from 'react';
+import moment from 'moment';
+import { FaRegHeart } from 'react-icons/fa';
 
-function PostCard  ({postData, isLoading}) {
-    let date = []
+function PostCard({ postData, isLoading }) {
+    const [liked, setLiked] = useState(false);
 
-    const deleting = (id) => {
+    const handleLike = () => {
+        setLiked(!liked);
+    };
+
+    const handleDelete = (id) => {
         fetch(`http://localhost:3000/id/${id}`, { method: 'DELETE' })
-            .then(response => {
+            .then((response) => {
                 if (response.ok) {
-                    // Recargar la página después de eliminar la publicación con éxito
                     window.location.reload();
                 } else {
                     console.error('Error al eliminar la publicación');
                 }
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error('Error:', error);
             });
     };
-    postData.forEach(post => {
-         const dateFormated = moment.utc(post.createdAt).format('DD-MM-YYYY HH:mm');
-        date.push(dateFormated)
-    });
-     if(isLoading){
-        return(<p>Cargando...</p>)
-        }else{
-                
-            return(
-                <>
-                {postData.map((post, index) =>(
-                    <div className='post' key={post._id}>
-                        <div className='top-post'>
-                            <h3>{post.title}</h3>
+
+    if (isLoading) {
+        return <p>Cargando...</p>;
+    } else {
+        return (
+            <>
+                {postData.map((post) => (
+                    <div className="post" key={post._id}>
+                        <div className="top-post">
                             <p>{post.userName}</p>
                         </div>
                         <p>{post.content}</p>
-                        <div className='bot-post'>
-                            <p>{date[index]}</p>
-                            <button>Like</button>
-                            <button onClick={()=>{deleting(post._id)}}>Delete</button>
+                        <div className="bot-post">
+                            <p>{moment.utc(post.createdAt).format('DD-MM-YYYY HH:mm')}</p>
+                            <button onClick={handleLike}>
+                                <FaRegHeart className={liked ? 'heart red' : 'heart'} />
+                            </button>
+                            <button onClick={() => handleDelete(post._id)}>Delete</button>
                         </div>
                     </div>
                 ))}
-                </>
-            )
-        }
-        
+            </>
+        );
+    }
 }
 
-export default PostCard
+export default PostCard;
