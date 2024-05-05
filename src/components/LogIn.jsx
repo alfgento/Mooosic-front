@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase';
 import {useNavigate} from 'react-router-dom'
+import './LogIn.css';
 
 
 function LogIn() {
@@ -12,17 +13,14 @@ function LogIn() {
   const logIn = async () => {
     try {
       const loginInput = await signInWithEmailAndPassword(auth, email, password);
-      
-      navigate('/')
-      
-      alert(` Welcome!`);
+      navigate('/dashboard')
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <form>
+    <form className='log-in-form'>
       <label htmlFor="email">Email</label>
       <input
         type="email"

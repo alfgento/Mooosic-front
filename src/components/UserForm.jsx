@@ -20,7 +20,7 @@ function SignIn() {
       
       navigate('/')
       
-      alert(`Account created succesfully. Welcome ${name}!`);
+      alert(`Account created succesfully. Welcome ${name}!, please login to access your account.`);
       
     } catch (error) {
       console.log(error);
@@ -29,7 +29,16 @@ function SignIn() {
   };
 
   return (
-    <form>
+    <form className='sign-in-form'>
+      <label htmlFor="username">Username</label>
+      <input
+        type="text"
+        id="username"
+        value={username}
+        name="username"
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      
       <label htmlFor="name">Name</label>
       <input
         type="text"
@@ -39,14 +48,14 @@ function SignIn() {
         onChange={(e) => setName(e.target.value)}
       />
 
-      <label htmlFor="username">Username</label>
+      <label htmlFor="surname">Surname</label>
       <input
         type="text"
-        id="username"
-        value={username}
+        id="surname"
+        value={surname}
         name="username"
-        onChange={(e) => setUsername(e.target.value)}
-      />
+        onChange={(e) => setSurname(e.target.value)}
+      /> 
 
       <label htmlFor="age">Age</label>
       <input
@@ -55,15 +64,6 @@ function SignIn() {
         value={age}
         name="age"
         onChange={(e) => setAge(e.target.value)}
-      />
-
-      <label htmlFor="surname">Surname</label>
-      <input
-        type="text"
-        id="surname"
-        value={surname}
-        name="username"
-        onChange={(e) => setSurname(e.target.value)}
       />
 
       <label htmlFor="email">Email</label>

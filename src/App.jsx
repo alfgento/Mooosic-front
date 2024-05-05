@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
+import Home from './Home';
 import UserForm from './components/UserForm';
 import PostForm from './components/PostForm';
 import LogIn from './components/LogIn'
 import './App.css'
+import LandingPage from './LandingPage';
 
 function App() {
 
@@ -25,12 +26,11 @@ function App() {
     
   },[])
 
-  
-
   return (
     <Router>
       <Routes>
-        <Route path='/' element= {<Home postData = {postData} isLoading={isLoading} />} />
+        <Route path='/' element={<LandingPage />} />
+        <Route path='dashboard' element={<Home postData = {postData} isLoading={isLoading} />} />
         <Route path='sign-in' element={<UserForm />} />
         <Route path='log-in' element={<LogIn />} />
         <Route path='newPost' element={<PostForm />} />
