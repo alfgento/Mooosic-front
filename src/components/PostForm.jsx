@@ -1,6 +1,6 @@
 function PostForm () {
     return(
-        <form action="http://localhost:3000/create" method="POST" enctype="application/json">
+        <form action="http://localhost:3000/create" method="POST" encType="application/json">
             <h2>New post</h2>
             <label for="title">User</label>
             <input type="text" id="title" name="userName" />

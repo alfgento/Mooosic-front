@@ -29,7 +29,7 @@ function SignIn() {
   };
 
   return (
-    <form className='sign-in-form'>
+    <form className='sign-in-form' action="http://localhost:3000/user/createUser" method="POST" encType="application/json" >
       <label htmlFor="username">Username</label>
       <input
         type="text"
@@ -53,7 +53,7 @@ function SignIn() {
         type="text"
         id="surname"
         value={surname}
-        name="username"
+        name="surname"
         onChange={(e) => setSurname(e.target.value)}
       /> 
 
@@ -83,7 +83,7 @@ function SignIn() {
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <button type="button" onClick={signIn}>
+      <button type="submit" onClick={signIn}>
         Sign Up
       </button>
     </form>

@@ -31,9 +31,10 @@ function App() {
       <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route path='dashboard' element={<Home postData = {postData} isLoading={isLoading} />} />
-        <Route path='sign-in' element={<UserForm />} />
+          <Route path='/dashboard/newPost' element={<PostForm />} />
+        <Route path='sign-up' element={<UserForm />} />
         <Route path='log-in' element={<LogIn />} />
-        <Route path='newPost' element={<PostForm />} />
+        
       </Routes>
     </Router>
     
