@@ -13,7 +13,8 @@ function SignIn() {
   const [surname, setSurname] = useState('');
   const navigate = useNavigate()
 
-  const signIn = async () => {
+  const signIn = async (e) => {
+    e.preventDefault()
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;

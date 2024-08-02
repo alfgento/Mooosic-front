@@ -1,0 +1,11 @@
+.logout_btn{
+    border-radius: 20px;
+    border: 1px solid rgb(95, 22, 95);
+    background-color: blueviolet;
+    color: white;
+}
+
+.logout_btn:hover{
+    background-color: aliceblue;
+    color:black ;
+}
