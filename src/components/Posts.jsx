@@ -5,11 +5,13 @@ import './Posts.css'
 
 function Posts ({postData, isLoading}) {
     return(
-        <div>  
-            <h3>Latest posts</h3>  
-            <Link to="newPost"><h3>New post</h3></Link>
+        <div className="posts-zone">  
+            <h3 className="latest-posts">Latest posts</h3>  
             <LogOut />
-            <PostCard postData = {postData} isLoading={isLoading} />
+            <div className="postsdiv">
+                <Link className="link" to="newPost"><h3>New post</h3></Link>
+                <PostCard postData = {postData} isLoading={isLoading} />
+            </div>
         </div>
     )
 }

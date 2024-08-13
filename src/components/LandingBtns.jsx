@@ -4,8 +4,8 @@ import './LandingBtns.css'
 function LandingButtons () {
     return (
         <div className='login'>
-            <Link to='log-in'><h2>Login</h2></Link>
-            <Link to='sign-up'><h2>Sign Up</h2></Link>
+            <Link to='log-in'><button>Login</button></Link>
+            <Link to='sign-up'><button>Sign Up</button></Link>
         </div>
     )
 }

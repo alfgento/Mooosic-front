@@ -3,10 +3,13 @@ import moment from 'moment';
 import { FaRegHeart } from 'react-icons/fa';
 
 function PostCard({ postData, isLoading }) {
-    const [liked, setLiked] = useState(false);
+    const [likedPosts, setLikedPosts] = useState({});
 
-    const handleLike = () => {
-        setLiked(!liked);
+    const handleLike = (id) => {
+        setLikedPosts((prevLikedPosts) => ({
+            ...prevLikedPosts,
+            [id]: !prevLikedPosts[id]
+        }));
     };
 
     const handleDelete = (id) => {
@@ -36,8 +39,8 @@ function PostCard({ postData, isLoading }) {
                         <p>{post.content}</p>
                         <div className="bot-post">
                             <p>{moment.utc(post.createdAt).format('DD-MM-YYYY HH:mm')}</p>
-                            <button onClick={handleLike}>
-                                <FaRegHeart className={liked ? 'heart red' : 'heart'} />
+                            <button className='like-btn' onClick={() => handleLike(post._id)}>
+                                <FaRegHeart className={likedPosts[post._id] ? 'heart red' : 'heart'} />
                             </button>
                             <button onClick={() => handleDelete(post._id)}>Delete</button>
                         </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase';
 import {useNavigate} from 'react-router-dom';
+import Header from './Header'
 import './LogIn.css';
 
 
@@ -20,27 +21,31 @@ function LogIn() {
   };
 
   return (
-    <form className='log-in-form'>
-      <label htmlFor="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
+    <div className='login-page'>
+      <Header />
+      <h2>Join the music!</h2>
+      <form className='log-in-form'>
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          id="email"
+         value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-      <label htmlFor="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-      <button type="button" onClick={logIn}>
-        Log In
-      </button>
-    </form>
+        <button type="button" onClick={logIn}>
+         Log In
+        </button>
+      </form>
+    </div>
   );
 }
 
