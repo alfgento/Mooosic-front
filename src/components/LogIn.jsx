@@ -23,28 +23,31 @@ function LogIn() {
   return (
     <div className='login-page'>
       <Header />
-      <h2>Join the music!</h2>
-      <form className='log-in-form'>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-         value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
 
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+      <div className='title-and-form'>
+        <h2>Join the music!</h2>
+        <form className='log-in-form'>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            />
 
-        <button type="button" onClick={logIn}>
-         Log In
-        </button>
-      </form>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            />
+
+          <button type="button" onClick={logIn}>
+          Log In
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

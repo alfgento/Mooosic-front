@@ -6,7 +6,7 @@ import Footer from './components/Footer'
 
 function Home ({postData, isLoding}) {
     return (
-        <>
+        <div className='homepage'>
             <div className='header'>
                 <Header />
             </div>
@@ -16,7 +16,7 @@ function Home ({postData, isLoding}) {
             <div className='footer'>
                 <Footer />
             </div>
-        </>
+        </div>
     )
 }
 export default Home;

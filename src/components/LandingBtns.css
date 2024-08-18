@@ -1,6 +1,15 @@
-button{
-    border: solid 1px blue;
-    border-radius: 30px;
-    padding: 3px 20px 3px 20px;
-    margin: 8px;
-}
+button {
+    border-radius: 10px !important;
+    border: none;
+    padding: 4px 14px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: Roboto;
+    background-color: #1a1a1a;
+    cursor: pointer !important;
+   
+  }
+  button:hover {
+    background-color: white;
+    color: black;
+  }

@@ -36,7 +36,7 @@ function PostForm() {
         value={formData.userName}
         onChange={handleInputChange}
       />
-      <input
+      <textarea
         type="text"
         id="content"
         name="content"

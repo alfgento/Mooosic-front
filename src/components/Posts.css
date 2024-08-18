@@ -1,19 +1,32 @@
-
+  .posts-zone {
+    background-color: #AD6DDB;
+    padding-bottom: 25px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
   .latest-posts{
-  color: blueviolet;
+  color: rgb(255, 255, 255);
   font-family:Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 900;
   }
   .link{
     align-self: self-start;
-    background-color:  rgba(83, 180, 56, 0.462);
-    color: white;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    padding: 4px 14px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: Roboto;
+    color:white;
     background-color: blueviolet;
-    border-radius: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: black 1px solid;
+    cursor: pointer ;
+    & h3 {
+      margin: 0;
+    }
   }
   .postsdiv{
     display: flex;
@@ -22,7 +35,6 @@
     gap: 15px;
   }
   .link:hover{
-    border: solid 1px;
     color: black;
     background-color: white;
   }
@@ -36,7 +48,7 @@
     gap: 10px;
   }
   .post{
-    background-color: rgba(83, 180, 56, 0.462);
+    background-color:blueviolet;
     border-radius: 10px;
     padding: 10px;
     width: 600px
@@ -45,18 +57,22 @@
   .heart{
     height: 20px;
     width: 20px;
+    color: white;
   }
-  .like-btn:hover .heart{
-    transition: transform 0.3s ;
+  .like-btn .heart {
+    transition: transform 0.4s ease
+  }
+  .like-btn, .like-btn:hover {
+    background-color: transparent;
+    border: none;
+  }
+  .like-btn:hover .heart{ 
+    transform: scale(1.7) ;
   }
   .red{
     color: red;
   }
-
-  .like-btn:hover .heart {
-     transform: scale(1.7) ;
+  .delete-btn{
+    background-color: black;
+    color: white;
   }
-  .like-btn:hover{
-    border: none;
-  }
-  

@@ -1,8 +1,26 @@
+
 .login-page{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 100px;
+    gap: 70px;
+
+    & h2 {
+        font-size: 30px;
+        font-weight: bold;
+        color: #f0f0f0;
+    }
+}
+.title-and-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgb(190, 134, 241);
+    border-radius: 30px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+
 }
 .log-in-form {
     display: flex;
@@ -14,13 +32,31 @@
     width: 400px;
     background-color: blueviolet;
     color: white;
-    border-radius: 10px;
+    border-radius: 15px;
+   
+    & label {
+        display: flex;
+        align-items: start;
+        font-family: Roboto;
+    }
 }
 
 input {
     width: 300px;
     margin-bottom: 10px;
+    border-radius: 15px;
 }
 button{
     width: max-content;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        rotate: -10deg;
+    }
+    to {
+        opacity: 1;
+        rotate: 0deg;
+    }
 }
